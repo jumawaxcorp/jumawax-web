@@ -26,7 +26,7 @@ public class WebMvcConfigurer
 {
   public void addResourceHandlers(ResourceHandlerRegistry registry)
   {
-    registry.addResourceHandler(new String[] { "/resources/**" }).addResourceLocations(new String[] { "/resources/" });
+    registry.addResourceHandler(new String[] { "/**" }).addResourceLocations(new String[] { "/" });
   }
   
   public void addViewControllers(ViewControllerRegistry registry)
@@ -38,7 +38,7 @@ public class WebMvcConfigurer
   public InternalResourceViewResolver viewResolver()
   {
     InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-    resolver.setPrefix("/WEB-INF/views/");
+    resolver.setPrefix("/WEB-INF/jsp/index/");
     resolver.setSuffix(".jsp");
     return resolver;
   }
