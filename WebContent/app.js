@@ -4,17 +4,10 @@
 
  Ext.application({
  	name: 'Jumawax',
- 	appFolder: '../app',
- 	controllers: [],
+ 	appFolder: 'app',
+ 	controllers: ['Login'],
  	autoCreateView: true,
  	launch: function() {
- 		Ext.create('Ext.container.Viewport',{
- 			layout: 'fit',
- 			items: [
- 				{
- 					title: 'Welcome to Jumawax Management and Report Web'
- 				}
- 			]
- 		});
+ 		Ext.create('Jumawax.view.LoginWindow',{}).show();
  	}
  });

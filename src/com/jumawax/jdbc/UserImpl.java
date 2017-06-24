@@ -35,6 +35,7 @@ public class UserImpl
     Connection con = null;
     User user = new User();
     String query = "SELECT * FROM USER WHERE USERNAME = '" + username + "'" + " AND PASSWORD = '" + hashedPassword + "'";
+    log.debug("query= "+query);
     try
     {
       con = this.ds.getConnection();
