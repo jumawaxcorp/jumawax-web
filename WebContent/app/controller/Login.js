@@ -30,6 +30,7 @@ Ext.define('Jumawax.controller.Login',{
 			}
 		});
 		store.load();
-		store.getProxy().getReader().rawData();
+		var user = store.first();
+		console.log("Agent Name : "+user);
 	}
 });

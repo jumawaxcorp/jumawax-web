@@ -74,6 +74,8 @@ public class JourneyPlanImpl
 			jps.setPhonenumber(rs.getString("phonenumber"));
 			jps.setEmail(rs.getString("email"));
 			jps.setAddress(rs.getString("address"));
+			jps.setLatitude(rs.getString("latitude"));
+			jps.setLongitude(rs.getString("longitude"));
 			listPlanStore.add(jps);
 		}
 		rs.close();

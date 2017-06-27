@@ -2,6 +2,7 @@ package com.jumawax.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jumawax.helper.Distance;
 import com.jumawax.helper.SaltHasher;
 import java.sql.SQLException;
 import java.util.Arrays;
@@ -64,6 +65,12 @@ public class WebMvcConfigurer
   {
     SaltHasher sh = new SaltHasher();
     return sh;
+  }
+  
+  @Bean(name={"distance"})
+  public static Distance distance() {
+	  Distance dist = new Distance();
+	  return dist;
   }
   
   @Bean
