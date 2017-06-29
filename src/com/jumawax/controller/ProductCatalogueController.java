@@ -29,7 +29,7 @@ public class ProductCatalogueController {
 	@RequestMapping(value={"list/jsonp/product/sku"}, produces={"application/json"})
 	@ResponseBody public List<Product> getProduct(WebRequest request) {
 		List<Product> listProd = new ArrayList<>();
-		listProd = prodCat.listProduct(request.getParameter("catalogueId"));
+		listProd = prodCat.listProduct(request.getParameter("storeId"),request.getParameter("catalogueId"));
 		return listProd;
 	}
 }

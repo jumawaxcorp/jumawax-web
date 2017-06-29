@@ -51,10 +51,10 @@ public class ProductCatalogueImpl implements ProductCatalogue {
 	}
 
 	@Override
-	public List<Product> listProduct(String catalogueId) {
+	public List<Product> listProduct(String storeId,String catalogueId) {
 		// TODO Auto-generated method stub
 		List<Product> listProd = new ArrayList<>();
-		String query = "SELECT * FROM sku WHERE catalogue_id = '"+catalogueId+"'";
+		String query = "SELECT * FROM pvskustore WHERE store_id = '"+storeId+"' AND catalogue_id = '"+catalogueId+"'";
 		Connection con = null;
 		try {
 			con = ds.getConnection();
@@ -65,6 +65,7 @@ public class ProductCatalogueImpl implements ProductCatalogue {
 				prod.setCatalogueId(rs.getString("catalogue_id"));
 				prod.setSkuId(rs.getString("sku_id"));
 				prod.setSkuName(rs.getString("sku_name"));
+				prod.setStoreId(rs.getString("store_id"));
 				listProd.add(prod);
 			}
 		} catch (Exception e) {

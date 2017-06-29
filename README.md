@@ -10,5 +10,17 @@ ListStore=>/journeyplan/list/jsonp/plan/store?callback=functionCallback&planid={
 	return=>planid,storeCode,storeName,address,name,phonenumber,email,latitude,longitude,isReached
 ListCatalogue=>/product/list/jsonp/product/catalogue?callback=functionCallback
 	return=>catalogueId,catalogueName
-ListSKU=>/product/list/jsonp/product/sku?callback=functionCallback&catalogueId={idcatalog}
-	return=>skuId,catalogueId,skuName
+ListSKU=>/product/list/jsonp/product/sku?callback=functionCallback&storeId={storecode}&catalogueId={idcatalog}
+	return=>skuId,catalogueId,skuName,storeId
+	
+			//List Question OOS,OSA(common,patial,promo)//
+
+Apakah item tersedia? Ya Tidak
+jika tidak, apakah pricetag ada di rak?
+
+Apakah item memiliki promo? Ya Tidak 
+
+Apakah item tersedia di rak lain?
+
+
+			

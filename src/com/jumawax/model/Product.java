@@ -5,6 +5,14 @@ public class Product {
 	private String skuId;
 	private String catalogueId;
 	private String skuName;
+	private String storeId;
+	
+	public String getStoreId() {
+		return storeId;
+	}
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+	}
 	public String getSkuId() {
 		return skuId;
 	}
