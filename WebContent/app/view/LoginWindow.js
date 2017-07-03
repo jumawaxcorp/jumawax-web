@@ -5,6 +5,7 @@
  Ext.define('Jumawax.view.LoginWindow',{
  	extend: 'Ext.window.Window',
  	alias: 'widget.loginwindow',
+ 	id: 'loginwindow',
  	title: 'Enter Username & Password',
  	width: 400,
  	autoHeight: true,
@@ -12,7 +13,7 @@
 	resizable: false,
 	draggable: true,
 	layout: 'fit',
-	iconCls: 'key',
+	iconCls: 'icon-key',
 	modal: true,
 	initComponent: function() {
 		Ext.apply(this,{
@@ -50,6 +51,7 @@
 		text: 'Login',
 		type: 'submit',
 		action: 'login',
-		formBind: true
+		formBind: true,
+		iconCls: 'icon-login'
 	}]
  });

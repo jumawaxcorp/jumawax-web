@@ -28,10 +28,11 @@ public class UserController
     log.debug("Obus Kirim=" + username + "&" + password);
     User usr = new User();
     usr = this.userCC.login(username, password);
+    usr.setMsg("Success");
     
     String role = usr.getRole();
     if (role.equals("")) {
-      throw new ServletException("Invalid User");
+        usr.setMsg("Invalid Username Password");
     }
     usr.setToken(Jwts.builder().setSubject(usr.getAgentname()).claim("roles", role).setIssuedAt(new Date())
       .signWith(SignatureAlgorithm.HS256, "secretkey").compact());

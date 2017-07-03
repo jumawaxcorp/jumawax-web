@@ -47,6 +47,7 @@ public class UserImpl
         user.setRole(rs.getString("role_id"));
         user.setUsername(rs.getString("username"));
       }
+      else user.setRole("");
       rs.close();
       con.close();
     }

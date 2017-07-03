@@ -6,7 +6,7 @@
  	name: 'Jumawax',
  	appFolder: 'app',
  	controllers: ['Login'],
- 	autoCreateView: true,
+ 	autoCreateViewport: false,
  	launch: function() {
  		Ext.create('Jumawax.view.LoginWindow',{}).show();
  	}
