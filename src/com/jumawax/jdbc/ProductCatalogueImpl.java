@@ -44,6 +44,8 @@ public class ProductCatalogueImpl implements ProductCatalogue {
 				cat.setCatalogueName(rs.getString("catalogue_name"));
 				listCat.add(cat);
 			}
+			rs.close();
+			con.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -51,10 +53,10 @@ public class ProductCatalogueImpl implements ProductCatalogue {
 	}
 
 	@Override
-	public List<Product> listProduct(String storeId,String catalogueId) {
+	public List<Product> listProduct(String storeId,String catalogueId,String pjpId) {
 		// TODO Auto-generated method stub
 		List<Product> listProd = new ArrayList<>();
-		String query = "SELECT * FROM pvskustore WHERE store_id = '"+storeId+"' AND catalogue_id = '"+catalogueId+"'";
+		String query = "SELECT * FROM pvskustore WHERE store_id = '"+storeId+"' AND catalogue_id = '"+catalogueId+"' AND pjp_id = '"+pjpId+"'";
 		Connection con = null;
 		try {
 			con = ds.getConnection();
@@ -68,6 +70,8 @@ public class ProductCatalogueImpl implements ProductCatalogue {
 				prod.setStoreId(rs.getString("store_id"));
 				listProd.add(prod);
 			}
+			rs.close();
+			con.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

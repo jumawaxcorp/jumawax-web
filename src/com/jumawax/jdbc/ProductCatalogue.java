@@ -11,6 +11,6 @@ import com.jumawax.model.Product;
 public interface ProductCatalogue {
 	
 	public abstract List<Catalogue> listCatalogue();
-	public abstract List<Product> listProduct(String storeId,String catalogueId);
+	public abstract List<Product> listProduct(String storeId,String catalogueId,String pjpId);
 	
 }

@@ -2,11 +2,14 @@ package com.jumawax.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jumawax.helper.DateFormatter;
 import com.jumawax.helper.Distance;
 import com.jumawax.helper.SaltHasher;
 import java.sql.SQLException;
 import java.util.Arrays;
 import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +28,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class WebMvcConfigurer
   extends WebMvcConfigurerAdapter
 {
-  public void addResourceHandlers(ResourceHandlerRegistry registry)
+  
+	Logger log = Logger.getLogger(WebMvcConfigurer.class);
+	
+	public void addResourceHandlers(ResourceHandlerRegistry registry)
   {
     registry.addResourceHandler(new String[] { "/**" }).addResourceLocations(new String[] { "/" });
   }
@@ -52,10 +58,12 @@ public class WebMvcConfigurer
     try
     {
       dataSource.getConnection();
+      log.debug("SUCCESS");
     }
     catch (SQLException e)
     {
       e.printStackTrace();
+      log.debug("Error :"+e.getMessage());
     }
     return dataSource;
   }
@@ -71,6 +79,12 @@ public class WebMvcConfigurer
   public static Distance distance() {
 	  Distance dist = new Distance();
 	  return dist;
+  }
+  
+  @Bean(name={"dateformatter"})
+  public static DateFormatter df() {
+	  DateFormatter df = new DateFormatter();
+	  return df;
   }
   
   @Bean

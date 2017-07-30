@@ -7,6 +7,7 @@
  	alias: 'widget.viewport',
  	layout: 'fit',
  	stores: ['User'],
+ 	requires: ['Jumawax.view.MenuContent'],
  	// requires: [
  	// 	'Ext.layout.container.Border'
  	// ],
@@ -22,7 +23,7 @@
  				xtype: 'toolbar',
  				height: 50,
  				items: [{
- 					width: 150
+ 					iconCls: 'icon-webinfo'
  				},{
  					flex: 1	
  				},{
@@ -33,7 +34,22 @@
  			layout: {
  				type: 'hbox',
  				align: 'stretch'
- 			}
+ 			},
+ 			items: [{
+ 				width: 250,
+ 				xtype: 'panel',
+ 				title: 'Main Menu',
+ 				bodyPadding: 5,
+ 				id: 'west-region',
+ 				layout: {
+ 					type: 'vbox',
+ 					align: 'stretch'
+ 				},
+ 				items: [{
+ 					xtype: 'menucontent',
+ 					flex: 1
+ 				}]
+ 			}]
  		};
 
  		this.callParent();

@@ -23,4 +23,7 @@ Apakah item memiliki promo? Ya Tidak
 Apakah item tersedia di rak lain?
 
 
+/* UPDATE skubyplan SET status = ''; */
+
+
 			
