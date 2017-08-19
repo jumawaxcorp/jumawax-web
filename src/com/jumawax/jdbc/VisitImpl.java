@@ -74,6 +74,25 @@ public class VisitImpl implements VisitCC {
 		if(!msg.equals("SUCCESS")) {
 			msg = "Failed to insert data";
 		}
+		else {
+			try {
+				sql = "{? = CALL doupdatejourneystore(?,?,?,?,?,?,?)}";
+				con = ds.getConnection();
+				CallableStatement cs = con.prepareCall(sql);
+				cs.setInt(2, Integer.valueOf(pjpId));
+				cs.setString(3, storeCode);
+				cs.setInt(4, Integer.valueOf(skuId));
+				cs.setInt(5, Integer.valueOf(oosPromo));
+				cs.setInt(6, Integer.valueOf(oos));
+				cs.setTimestamp(7, DateFormatter.date(collectDtm));
+				cs.setInt(8, Integer.valueOf(oosPartial));
+				cs.executeUpdate();
+				cs.close();
+				con.close();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 		visitForm.setMsg(msg);
 		return visitForm;
 	}
