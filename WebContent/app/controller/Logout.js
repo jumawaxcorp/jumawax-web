@@ -13,8 +13,7 @@
 			}
 		});
 	},
-
-	onButtonClickSubmit: function(button,e,options) {
+	onButtonClickSubmit: function(button) {
 			alert('test');
 			Ext.create('Jumawax.view.LoginWindows',{}).show();
 
