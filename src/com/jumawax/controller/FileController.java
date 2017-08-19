@@ -25,6 +25,8 @@ public class FileController {
 	@RequestMapping(value={"upload"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})  
 	public String  uploadFile(@RequestParam("file") MultipartFile file) throws IOException 
 	{  
+		log.debug("=========>");
+		
 		if(file.isEmpty()) {
 			return "Kosong Cuy";
 		}

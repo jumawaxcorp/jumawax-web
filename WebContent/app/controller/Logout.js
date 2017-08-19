@@ -15,6 +15,7 @@
 	},
 
 	onButtonClickSubmit: function(button,e,options) {
+			alert('test');
 			Ext.create('Jumawax.view.LoginWindows',{}).show();
 
 	}
