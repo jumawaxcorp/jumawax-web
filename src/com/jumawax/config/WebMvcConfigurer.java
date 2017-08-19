@@ -16,6 +16,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -48,6 +50,11 @@ public class WebMvcConfigurer
     resolver.setPrefix("/WEB-INF/jsp/index/");
     resolver.setSuffix(".jsp");
     return resolver;
+  }
+  
+  @Bean
+  public MultipartResolver multipartResolver() {
+      return new StandardServletMultipartResolver();
   }
   
   @Bean(name={"ds"}, destroyMethod="")

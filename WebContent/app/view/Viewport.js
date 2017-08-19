@@ -23,6 +23,7 @@
  				xtype: 'toolbar',
  				height: 50,
  				items: [{
+ 					itemId: 'ToolbarLogout',
  					iconCls: 'icon-webinfo'
  				},{
  					flex: 1	
