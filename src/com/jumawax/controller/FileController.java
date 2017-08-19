@@ -26,6 +26,8 @@ public class FileController {
 			return "Kosong Cuy";
 		}
 		
+		log.debug("Name : "+file.getOriginalFilename().toString());
+		
         try {
 
             // Get the file and save it somewhere
