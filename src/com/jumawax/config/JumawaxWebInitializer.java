@@ -1,11 +1,12 @@
-package com.jumawax.initializer;
-
+package com.jumawax.config;
 import java.io.File;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.jumawax.config.WebMvcConfigurer;
 
 public class JumawaxWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -20,13 +21,13 @@ public class JumawaxWebInitializer extends AbstractAnnotationConfigDispatcherSer
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Class[]{WebMvcConfigurer.class};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
-		return null;
+		return new String[]{"/"};
 	}
 	
 	 @Override

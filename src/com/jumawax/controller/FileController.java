@@ -10,7 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Controller
 @RequestMapping({"file"})
@@ -18,15 +21,17 @@ public class FileController {
 
 
 	
-	private static String UPLOADED_FOLDER = "E://temp//";
+	private static String UPLOADED_FOLDER = "E:/temp/";
 	
 	Logger log = Logger.getLogger(FileController.class);
 	  
 	@RequestMapping(value={"upload"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})  
+	//@ResponseBody
+	//public String  uploadFile(MultipartHttpServletRequest request) throws IOException
 	public String  uploadFile(@RequestParam("file") MultipartFile file) throws IOException 
 	{  
 		log.debug("=========>");
-		
+		//MultipartFile file = request.getFile("file");
 		if(file.isEmpty()) {
 			return "Kosong Cuy";
 		}

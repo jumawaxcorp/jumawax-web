@@ -23,7 +23,6 @@
  				xtype: 'toolbar',
  				height: 50,
  				items: [{
- 					itemId:'ToolbarLogout',
  					iconCls: 'icon-webinfo'
  				},{
  					flex: 1	
@@ -38,7 +37,7 @@
  			},
  			items: [{
  				width: 250,
- 				xtype: 'panel',
+ 				xtype: 'treepanel',
  				title: 'Main Menu',
  				bodyPadding: 5,
  				id: 'west-region',

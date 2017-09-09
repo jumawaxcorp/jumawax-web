@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>Jumawax</display-name>
   <servlet>
-  	<servlet-name>dispatcher</servlet-name>
+  	<servlet-name>dispatchers</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
   	<init-param>
   		<param-name>contextClass</param-name>
@@ -12,9 +12,15 @@
   		<param-name>contextConfigLocation</param-name>
   		<param-value>com.jumawax.config</param-value>
   	</init-param>
+  	<multipart-config>
+            <location>/tmp</location>
+            <max-file-size>20848820</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>dispatcher</servlet-name>
+  	<servlet-name>dispatchers</servlet-name>
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
   <welcome-file-list>

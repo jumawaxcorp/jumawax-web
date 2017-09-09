@@ -12,7 +12,7 @@ ListCatalogue=>/product/list/jsonp/product/catalogue?callback=functionCallback
 	return=>catalogueId,catalogueName
 ListSKU=>/product/list/jsonp/product/sku?callback=functionCallback&storeId={storecode}&catalogueId={idcatalog}
 	return=>skuId,catalogueId,skuName,storeId
-	
+StoreImage=>/file/upload
 			//List Question OOS,OSA(common,patial,promo)//
 
 Apakah item tersedia? Ya Tidak
@@ -25,5 +25,16 @@ Apakah item tersedia di rak lain?
 
 /* UPDATE skubyplan SET status = ''; */
 
-
+//*
+  *
+  *
+  *
+  *	JouneyPlan --> Store --> Category --> SKU --> Submit
+					 |			|			|		|
+					 |			|			|		|
+					 |			|			|_______|		
+					 |			|				|
+					 |			|________________|				
+					 |					|	
+					_|___________________|
 			
